@@ -15,7 +15,6 @@ export class RestaurantService {
     // 음식점 추가
     create(data: Partial<Restaurant>) {
         const restaurant = this.restaurantRepo.create(data);
-    console.log('📝 저장될 데이터:', restaurant);
         return this.restaurantRepo.save(restaurant);
     }
     // 음식점 전체 조회 - 옵션이 없어서 전체 조회
