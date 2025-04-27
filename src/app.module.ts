@@ -15,6 +15,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       database: process.env.DB_NAME,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
+      ssl: { rejectUnauthorized: false }, // ← 이 부분!
     }),
     RestaurantModule],
   controllers: [],
