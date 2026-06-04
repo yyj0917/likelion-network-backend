@@ -8,14 +8,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     ConfigModule.forRoot({}),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST,
-      port: Number(process.env.DB_PORT),
-      username: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
+      url: process.env.DATABASE_URL,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
-      ssl: { rejectUnauthorized: false }, // ← 이 부분!
+      ssl: { rejectUnauthorized: false },
     }),
     RestaurantModule],
   controllers: [],
